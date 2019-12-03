@@ -75,6 +75,9 @@ void SplitString(const std::string& s, std::vector<std::string>& v, const std::s
 int main(int argc, char** argv) {
   tensorflow::serving::main::Server::Options options;
   bool display_version = false;
+
+  std::string custom_ops;
+  std::vector<std::string> custom_op_path;
   std::vector<tensorflow::Flag> flag_list = {
       tensorflow::Flag("port", &options.grpc_port,
                        "Port to listen on for gRPC API"),
